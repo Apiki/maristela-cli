@@ -15,7 +15,7 @@ class App
         $fileHandle = new FileHandle();
         $processor  = new Processor($fileHandle);
 
-        $files =  glob("{$config['componentsDir']}/**/index.php");
+        $files = glob("{$config['componentsDir']}/**/index.php");
 
         foreach ($files as $file) {
             $fileHandle->write(

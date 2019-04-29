@@ -1,2 +1,2 @@
-# maristela-cli
+# Maristela CLI [![Build Status](https://scrutinizer-ci.com/g/Apiki/maristela-cli/badges/build.png?b=develop)](https://scrutinizer-ci.com/g/Apiki/maristela-cli/build-status/develop) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Apiki/maristela-cli/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/Apiki/maristela-cli/?branch=develop)
 Generate pure html files based on a PHP file and a mock.

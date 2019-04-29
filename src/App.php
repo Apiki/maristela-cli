@@ -43,7 +43,7 @@ class App
         $config = json_decode(file_get_contents($file), true);
 
         if (empty($config['componentsDir'])) {
-            throw new Exception('The "componentsDir" is not defined on config file.');
+            throw new \Exception('The "componentsDir" is not defined on config file.');
         }
 
         $config['componentsDir'] = "{$baseDir}{$config['componentsDir']}";

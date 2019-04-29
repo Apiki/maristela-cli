@@ -1,6 +1,6 @@
 {
     "name": "apiki/maristela-cli",
-    "description": "Generate html files based on a php file and a json.",
+    "description": "Generate pure html files based on a PHP file and a mock.",
     "type": "library",
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4"

@@ -1,0 +1,4 @@
+{
+    "phpSniffer.executablesFolder": "./vendor/bin/",
+    "phpSniffer.standard": "PSR2"
+}

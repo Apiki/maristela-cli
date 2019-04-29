@@ -1,6 +1,7 @@
 /.editorconfig export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
+/.scrutinizer.yml export-ignore
 /.vscode export-ignore
 /README.md export-ignore
 /phpcs.xml.dist export-ignore

@@ -10,19 +10,27 @@ class App
 {
     public static function buildComponents(Event $event)
     {
-        $config = self::getConfigurations($event);
+        $event->getIO()->write('');
 
-        $fileHandle = new FileHandle();
-        $processor  = new Processor($fileHandle);
+        try {
+            $config = self::getConfigurations($event);
 
-        $files = glob("{$config['componentsDir']}/**/index.php");
+            $fileHandle = new FileHandle();
+            $processor  = new Processor($fileHandle);
 
-        foreach ($files as $file) {
-            $fileHandle->write(
-                $file,
-                $processor->compile($file),
-                "{$config['componentsDir']}/_static"
-            );
+            $files = glob("{$config['componentsDir']}/**/index.php");
+
+            foreach ($files as $file) {
+                $event->getIO()->write("Writing component: <info>{$fileHandle->getComponentName($file)}</info>");
+
+                $fileHandle->write(
+                    $file,
+                    $processor->compile($file),
+                    "{$config['componentsDir']}/_static"
+                );
+            }
+        } catch (\Exception $e) {
+            $event->getIO()->write("<error>{$e->getMessage()}</error>");
         }
     }
 
@@ -31,7 +39,7 @@ class App
         $baseDir = $event->getComposer()->getConfig()->get('vendor-dir') . '/../';
 
         $defaults = [
-            'componentsDir' => $baseDir . 'components/',
+            'componentsDir' => $baseDir . 'components',
         ];
 
         $file = $baseDir . '.maristela-cli.json';

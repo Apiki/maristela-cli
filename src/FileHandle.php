@@ -10,8 +10,7 @@ class FileHandle
             mkdir($dir, 0755);
         }
 
-        $fileInfo = $this->getFileInfo($file);
-        $fileName = basename($fileInfo['dirname']);
+        $fileName = $this->getComponentName($file);
 
         file_put_contents("{$dir}/{$fileName}.html", $content);
     }
@@ -32,6 +31,12 @@ class FileHandle
         }
 
         return $data;
+    }
+
+    public function getComponentName(string $file) : string
+    {
+        $fileInfo = $this->getFileInfo($file);
+        return basename($fileInfo['dirname']);
     }
 
     protected function getFileInfo(string $file) : array

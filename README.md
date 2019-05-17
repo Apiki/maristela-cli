@@ -12,7 +12,7 @@ Generate pure html files based on a PHP file and a mock.
         ├── index.php
         └── mock.json
 ```
-1. Component **card** as example:
+2. Component **card** as example:
 
 **index.php**
 ```html
@@ -45,16 +45,16 @@ Generate pure html files based on a PHP file and a mock.
 ```
 
 ## Install
-1. Run `composer require apiki/maristela-cli` on terminal;
-1. Add a new script on composer.json:
+1. Run `composer require --dev apiki/maristela-cli` on terminal;
+2. Add a new script on composer.json:
 ```json
   "scripts": {
     "make:components": "Maristela\\Cli\\App::buildComponents"
   }
 ```
-1. Run `composer make:components` on terminal;
-1. Will be generated a `_static` folder inside your `components` folder.
-1. You can override default `components` creating a `.maristela-cli.json` on your project and setting a value for `componentsDir`:
+3. Run `composer make:components` on terminal;
+4. Will be generated a `_static` folder inside your `components` folder.
+5. You can override default `components` creating a `.maristela-cli.json` on your project and setting a value for `componentsDir`:
 
 **.maristela-cli.json**
 ```
@@ -62,4 +62,3 @@ Generate pure html files based on a PHP file and a mock.
   "componentsDir": "components"
 }
 ```
-
